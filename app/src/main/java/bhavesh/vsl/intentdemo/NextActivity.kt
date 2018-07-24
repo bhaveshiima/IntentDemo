@@ -12,7 +12,7 @@ class NextActivity : AppCompatActivity() {
         setContentView(R.layout.activity_next)
 
         var s = intent.getStringExtra("person_name")
-        tv1.text = "Welcome $s, <br> to Welcome to Vikram sarabhai Library"
+        tv1.text = "Welcome $s, to Welcome to Vikram sarabhai Library"
 
         // Back Button [ START ]
         btnBack.setOnClickListener {

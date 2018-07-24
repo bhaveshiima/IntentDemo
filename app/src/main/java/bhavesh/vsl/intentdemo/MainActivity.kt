@@ -1,5 +1,6 @@
 package bhavesh.vsl.intentdemo
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -63,9 +64,18 @@ class MainActivity : AppCompatActivity() {
 
         // Next Activity Button [ START ]
         nextBtn.setOnClickListener {
-            var iNext = Intent(this@MainActivity, NextActivity::class.java)
-            iNext.putExtra( "person_name", et2.text.toString())
-            startActivity(iNext)
+
+           if(et2.text.length > 0) {
+               var iNext = Intent(this@MainActivity, NextActivity::class.java)
+               iNext.putExtra("person_name", et2.text.toString())
+               startActivity(iNext)
+           }else{
+               var dialog = AlertDialog.Builder(this@MainActivity)
+               dialog.setTitle("Message")
+               dialog.setMessage("Please enter full name to go to next activity screen")
+               dialog.show()
+           }
+
         }
         // Next Activity Button [ END ]
 
