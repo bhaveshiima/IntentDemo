@@ -30,12 +30,21 @@
         android:id="@+id/dial"
         />
 
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/et2"
+        android:hint="Enter Full Name"
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Next Screen"
-        android:id="@+id/next"
+        android:id="@+id/nextBtn"
         />
 
     <Button
@@ -44,6 +53,15 @@
         android:layout_gravity="center"
         android:text="Open WatsApp"
         android:id="@+id/watsapp"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="RedBus App"
+        android:id="@+id/redbus"
         />
 
 </LinearLayout>

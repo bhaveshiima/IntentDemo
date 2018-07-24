@@ -37,12 +37,37 @@ class MainActivity : AppCompatActivity() {
 
 
         // Now WatsApp button
-            watsapp.setOnClickListener {
+        watsapp.setOnClickListener {
                 var packageName = "com.whatsapp"
                 var i = packageManager.getLaunchIntentForPackage(packageName)
                 startActivity(i)
 
         } // watsapp.OnclickListner()
+
+        // Redbus Button [ START ]
+        redbus.setOnClickListener {
+            var packageName = "in.redbus.android"
+            var i = packageManager.getLaunchIntentForPackage(packageName)
+
+            if(i!=null){
+                startActivity(i)
+            }else{
+                var i1 = Intent()
+                i1.action = Intent.ACTION_VIEW
+                i1.data = Uri.parse("https://play.google.com/store/apps/details?id=in.redbus.android")
+                startActivity(i1)
+            }
+            // Redbus Button [ END ]
+        } // Red Bus Onclick [ END]
+
+
+        // Next Activity Button [ START ]
+        nextBtn.setOnClickListener {
+            var iNext = Intent(this@MainActivity, NextActivity::class.java)
+            iNext.putExtra( "person_name", et2.text.toString())
+            startActivity(iNext)
+        }
+        // Next Activity Button [ END ]
 
 
 
